@@ -11,6 +11,8 @@
 
   <?php
     $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+    $urlArr = explode('/', $url);
+    $url = $urlArr[count($urlArr) - 1];
     if (file_exists('pages/'.$url.'.php')) {
       include('pages/'.$url.'.php');
     } else {
